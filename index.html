@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="css/flipbook.style.css">
+      <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+      <style type="text/css">
+         .flipbook{
+         position: relative;
+         width: 800px;
+         height: 600px;
+         }
+         .bookshelf {
+         width: 900px;
+         margin: 4rem auto;
+         text-align: center;
+         position: relative;
+         }
+         .book-grid {
+         z-index: 2;
+         position: relative;
+         transform: translateY(-15px);
+         }
+         .book-grid ul {
+         list-style: none;
+         padding: 0;
+         margin: 0;
+         display: grid;
+         grid-template-columns: repeat(4, 1fr);
+         }
+         .book-grid ul li {
+         justify-self: center;
+         }
+         .book-grid ul img {
+         display: block;
+         box-shadow: 0px -5px 20px 2px rgba(0, 0, 0, 0.3);
+         width: 141px;
+         height: 200px;
+         -o-object-fit: cover;
+         object-fit: cover;
+         }
+         .shelf-shadows {
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         width: 100%;
+         height: 1rem;
+         border-radius: 2px;
+         z-index: 1;
+         box-shadow: 0px -5px 3px 0px rgba(170, 170, 170, 0.2), 0px 15px 20px 0px rgba(170, 170, 170, 0.7), 0px 5px 5px 0px rgba(119, 119, 119, 0.3);
+         }
+         .shelf {
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         width: 100%;
+         height: 1rem;
+         background-color: #f9f9f9;
+         border-radius: 2px;
+         z-index: 3;
+         }
+      </style>
+   </head>
+   <body>
+    <nav class="navbar navbar-light bg-white shadow">
+      <div class="container justify-content-center">
+        <div class="navbar-brand d-flex align-items-center">
+          <img src="images/logo.png" alt="Logo" width="75px">
+          <span class="h4 mb-0 fw-bold mt-1" style="color:#00457E;">Project Portfolio</span>
+        </div>
+      </div>
+    </nav>
+      <div class="bookshelf">
+         <div class="book-grid">
+            <ul>
+               <li > <img class="pe-auto" data-bs-toggle="modal" data-bs-target="#modal-7" src="images/stayq/page1.jpg"/></li>
+               <li > <img class="pe-auto" data-bs-toggle="modal" data-bs-target="#modal-1" src="images/fcsc/page1.jpg"/></li>
+               <li > <img class="pe-auto" data-bs-toggle="modal" data-bs-target="#modal-2" src="images/ims/page1.jpg"/></li>
+               <li > <img class="pe-auto" data-bs-toggle="modal" data-bs-target="#modal-3" src="images/parency/page1.jpg"/></li>
+            </ul>
+         </div>
+         <div class="shelf-shadows"></div>
+         <div class="shelf"></div>
+      </div>
+      <div class="bookshelf">
+         <div class="book-grid">
+            <ul>
+               <li > <img class="pe-auto" data-bs-toggle="modal" data-bs-target="#modal-4" src="images/pin-point/page1.jpg"/></li>
+               <li > <img class="pe-auto" data-bs-toggle="modal" data-bs-target="#modal-5" src="images/quadrent/page1.jpg"/></li>
+               <li > <img class="pe-auto" data-bs-toggle="modal" data-bs-target="#modal-6" src="images/healthcare/page1.jpg"/></li>
+            </ul>
+         </div>
+         <div class="shelf-shadows"></div>
+         <div class="shelf"></div>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="modal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Free Credit Score Center</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                  <div id="theme-default-1" class="flipbook mx-auto w-100"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="modal-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Insurance Carrier Management System</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                  <div id="theme-default-2" class="flipbook mx-auto w-100"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="modal-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Business Management Platform</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                  <div id="theme-default-3" class="flipbook mx-auto w-100"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="modal-4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">PinPoint Fleet</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                  <div id="theme-default-4" class="flipbook mx-auto w-100"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="modal-5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Quadrent</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                  <div id="theme-default-5" class="flipbook mx-auto w-100"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="modal-6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Healthcare Platform</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                  <div id="theme-default-6" class="flipbook mx-auto w-100"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="modal-7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Hotel Booking Platform</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                  <div id="theme-default-7" class="flipbook mx-auto w-100"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 mt-4 border-top shadow-top">
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+          <span class="text-muted">&copy; 2023 Entrust Software Development India</span>
+        </div>
+      </footer>
+      <script src="js/jquery.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/flipbook.min.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function () {
+            $("#modal-1").on("shown.bs.modal", function () {
+                $("#theme-default-1").flipBook({
+                    pages:[
+                        {src:"images/fcsc/page1.jpg", thumb:"images/fcsc/thumb1.jpg", title:"Page One"},
+                        {src:"images/fcsc/page2.jpg", thumb:"images/fcsc/thumb2.jpg", title:"Page two"},
+                        {src:"images/fcsc/page3.jpg", thumb:"images/fcsc/thumb3.jpg", title:"Last"}
+                    ],
+                    viewMode:"3d"
+                });
+            });
+            $("#modal-2").on("shown.bs.modal", function () {
+                $("#theme-default-2").flipBook({
+                    pages:[
+                        {src:"images/ims/page1.jpg", thumb:"images/ims/thumb1.jpg", title:"Page One"},
+                        {src:"images/ims/page2.jpg", thumb:"images/ims/thumb2.jpg", title:"Page two"},
+                        {src:"images/ims/page3.jpg", thumb:"images/ims/thumb3.jpg", title:"Last"}
+                    ],
+                    viewMode:"3d"
+                });
+            });
+            $("#modal-3").on("shown.bs.modal", function () {
+                $("#theme-default-3").flipBook({
+                    pages:[
+                        {src:"images/parency/page1.jpg", thumb:"images/parency/thumb1.jpg", title:"Page One"},
+                        {src:"images/parency/page2.jpg", thumb:"images/parency/thumb2.jpg", title:"Page two"},
+                        {src:"images/parency/page3.jpg", thumb:"images/parency/thumb3.jpg", title:"Last"}
+                    ],
+                    viewMode:"3d"
+                });
+            });
+            $("#modal-4").on("shown.bs.modal", function () {
+                $("#theme-default-4").flipBook({
+                    pages:[
+                        {src:"images/pin-point/page1.jpg", thumb:"images/pin-point/thumb1.jpg", title:"Page One"},
+                        {src:"images/pin-point/page2.jpg", thumb:"images/pin-point/thumb2.jpg", title:"Page two"},
+                        {src:"images/pin-point/page3.jpg", thumb:"images/pin-point/thumb3.jpg", title:"Last"}
+                    ],
+                    viewMode:"3d"
+                });
+            });
+            $("#modal-5").on("shown.bs.modal", function () {
+                $("#theme-default-5").flipBook({
+                    pages:[
+                        {src:"images/quadrent/page1.jpg", thumb:"images/quadrent/thumb1.jpg", title:"Page One"},
+                        {src:"images/quadrent/page2.jpg", thumb:"images/quadrent/thumb2.jpg", title:"Page two"},
+                        {src:"images/quadrent/page3.jpg", thumb:"images/quadrent/thumb3.jpg", title:"Last"}
+                    ],
+                    viewMode:"3d"
+                });
+            });
+            $("#modal-6").on("shown.bs.modal", function () {
+                $("#theme-default-6").flipBook({
+                    pages:[
+                        {src:"images/healthcare/page1.jpg", thumb:"images/healthcare/thumb1.jpg", title:"Page One"},
+                        {src:"images/healthcare/page2.jpg", thumb:"images/healthcare/thumb2.jpg", title:"Page two"},
+                        {src:"images/healthcare/page3.jpg", thumb:"images/healthcare/thumb3.jpg", title:"Page three"},
+                        {src:"images/healthcare/page4.jpg", thumb:"images/healthcare/thumb4.jpg", title:"Page four"},
+                        {src:"images/healthcare/page5.jpg", thumb:"images/healthcare/thumb5.jpg", title:"Page five"},
+                        {src:"images/healthcare/page6.jpg", thumb:"images/healthcare/thumb6.jpg", title:"Page six"},
+                        {src:"images/healthcare/page7.jpg", thumb:"images/healthcare/thumb7.jpg", title:"Page seven"},
+                        {src:"images/healthcare/page8.jpg", thumb:"images/healthcare/thumb8.jpg", title:"Page eight"},
+                        {src:"images/healthcare/page9.jpg", thumb:"images/healthcare/thumb9.jpg", title:"Page nine"},
+                        {src:"images/healthcare/page10.jpg", thumb:"images/healthcare/thumb10.jpg", title:"Page ten"},
+                        {src:"images/healthcare/page11.jpg", thumb:"images/healthcare/thumb11.jpg", title:"Page eleven"},
+                        {src:"images/healthcare/page12.jpg", thumb:"images/healthcare/thumb12.jpg", title:"Last"}
+                    ],
+                    viewMode:"3d"
+                });
+            });
+            $("#modal-7").on("shown.bs.modal", function () {
+                $("#theme-default-7").flipBook({
+                    pages:[
+                        {src:"images/stayq/page1.jpg", thumb:"images/stayq/thumb1.jpg", title:"Cover"},
+                        {src:"images/stayq/page2.jpg", thumb:"images/stayq/thumb2.jpg", title:"Page two"},
+                        {src:"images/stayq/page3.jpg", thumb:"images/stayq/thumb3.jpg", title:"Page three"},
+                        {src:"images/stayq/page4.jpg", thumb:"images/stayq/thumb4.jpg", title:"Page four"},
+                        {src:"images/stayq/page5.jpg", thumb:"images/stayq/thumb5.jpg", title:"Page five"},
+                        {src:"images/stayq/page6.jpg", thumb:"images/stayq/thumb6.jpg", title:"Last"}
+                    ],
+                    viewMode:"3d"
+                });
+            });
+
+
+            window.addEventListener('DOMContentLoaded', (event) => {
+          // Check if the current URL is the original one
+          if (window.location.href === 'file:///D:/ESDI%20project/ESDI%20Doc/document-flipbook/index.html') {
+              // Update the URL
+              window.history.replaceState({}, document.title, 'http://entrust-us.com/portfolio/');
+          }
+      });
+              
+         })
+      </script>
+   </body>
+</html>
