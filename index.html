@@ -89,6 +89,7 @@
                <li > <img class="pe-auto" data-bs-toggle="modal" data-bs-target="#modal-4" src="images/pin-point/page1.jpg"/></li>
                <li > <img class="pe-auto" data-bs-toggle="modal" data-bs-target="#modal-5" src="images/quadrent/page1.jpg"/></li>
                <li > <img class="pe-auto" data-bs-toggle="modal" data-bs-target="#modal-6" src="images/healthcare/page1.jpg"/></li>
+               <li > <img class="pe-auto" data-bs-toggle="modal" data-bs-target="#modal-8" src="images/outsys/page1.jpg"/></li>
             </ul>
          </div>
          <div class="shelf-shadows"></div>
@@ -192,6 +193,20 @@
             </div>
          </div>
       </div>
+      <!-- Modal -->
+      <div class="modal fade" id="modal-8" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">E-Commerce Multivendor Platform</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                  <div id="theme-default-8" class="flipbook mx-auto w-100"></div>
+               </div>
+            </div>
+         </div>
+      </div>
       <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 mt-4 border-top shadow-top">
         <div class="col-md-4 d-flex justify-content-center align-items-center">
           <span class="text-muted">&copy; 2023 Entrust Software Development India</span>
@@ -280,6 +295,22 @@
                         {src:"images/stayq/page4.jpg", thumb:"images/stayq/thumb4.jpg", title:"Page four"},
                         {src:"images/stayq/page5.jpg", thumb:"images/stayq/thumb5.jpg", title:"Page five"},
                         {src:"images/stayq/page6.jpg", thumb:"images/stayq/thumb6.jpg", title:"Last"}
+                    ],
+                    viewMode:"3d"
+                });
+            });
+            $("#modal-8").on("shown.bs.modal", function () {
+                $("#theme-default-8").flipBook({
+                    pages:[
+                        {src:"images/outsys/page1.jpg", thumb:"images/outsys/thumb1.jpg", title:"Cover"},
+                        {src:"images/outsys/page2.jpg", thumb:"images/outsys/thumb2.jpg", title:"Page two"},
+                        {src:"images/outsys/page3.jpg", thumb:"images/outsys/thumb3.jpg", title:"Page three"},
+                        {src:"images/outsys/page4.jpg", thumb:"images/outsys/thumb4.jpg", title:"Page four"},
+                        {src:"images/outsys/page5.jpg", thumb:"images/outsys/thumb5.jpg", title:"Page five"},
+                        {src:"images/outsys/page6.jpg", thumb:"images/outsys/thumb6.jpg", title:"Page six"},
+                        {src:"images/outsys/page7.jpg", thumb:"images/outsys/thumb7.jpg", title:"Page seven"},
+                        {src:"images/outsys/page8.jpg", thumb:"images/outsys/thumb8.jpg", title:"Page eight"},
+                        {src:"images/outsys/page9.jpg", thumb:"images/outsys/thumb9.jpg", title:"Last"}
                     ],
                     viewMode:"3d"
                 });
