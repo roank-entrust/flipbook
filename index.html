@@ -95,6 +95,16 @@
          <div class="shelf-shadows"></div>
          <div class="shelf"></div>
       </div>
+      <div class="bookshelf">
+         <div class="book-grid">
+            <ul>
+               <li > <img class="pe-auto" data-bs-toggle="modal" data-bs-target="#modal-9" src="images/bio-illustrator/page1.jpg"/></li>
+               <li > <img class="pe-auto" data-bs-toggle="modal" data-bs-target="#modal-10" src="images/arc-gis/page1.jpg"/></li>
+            </ul>
+         </div>
+         <div class="shelf-shadows"></div>
+         <div class="shelf"></div>
+      </div>
       <!-- Modal -->
       <div class="modal fade" id="modal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
          <div class="modal-dialog modal-xl">
@@ -207,6 +217,34 @@
             </div>
          </div>
       </div>
+      <!-- Modal -->
+      <div class="modal fade" id="modal-9" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Scientific Illustration Platform</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                  <div id="theme-default-9" class="flipbook mx-auto w-100"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="modal-10" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Utility Distribution GIS Network Platform</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                  <div id="theme-default-10" class="flipbook mx-auto w-100"></div>
+               </div>
+            </div>
+         </div>
+      </div>
       <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 mt-4 border-top shadow-top">
         <div class="col-md-4 d-flex justify-content-center align-items-center">
           <span class="text-muted">&copy; 2023 Entrust Software Development India</span>
@@ -315,8 +353,34 @@
                     viewMode:"3d"
                 });
             });
-
-
+            $("#modal-9").on("shown.bs.modal", function () {
+                $("#theme-default-9").flipBook({
+                    pages:[
+                        {src:"images/bio-illustrator/page1.jpg", thumb:"images/bio-illustrator/thumb1.jpg", title:"Cover"},
+                        {src:"images/bio-illustrator/page2.jpg", thumb:"images/bio-illustrator/thumb2.jpg", title:"Page two"},
+                        {src:"images/bio-illustrator/page3.jpg", thumb:"images/bio-illustrator/thumb3.jpg", title:"Page three"},
+                        {src:"images/bio-illustrator/page4.jpg", thumb:"images/bio-illustrator/thumb4.jpg", title:"Page four"},
+                        {src:"images/bio-illustrator/page5.jpg", thumb:"images/bio-illustrator/thumb5.jpg", title:"Page five"},
+                        {src:"images/bio-illustrator/page6.jpg", thumb:"images/bio-illustrator/thumb6.jpg", title:"Last"}
+                    ],
+                    viewMode:"3d"
+                });
+            });
+            $("#modal-10").on("shown.bs.modal", function () {
+                $("#theme-default-10").flipBook({
+                    pages:[
+                        {src:"images/arc-gis/page1.jpg", thumb:"images/arc-gis/thumb1.jpg", title:"Cover"},
+                        {src:"images/arc-gis/page2.jpg", thumb:"images/arc-gis/thumb2.jpg", title:"Page two"},
+                        {src:"images/arc-gis/page3.jpg", thumb:"images/arc-gis/thumb3.jpg", title:"Page three"},
+                        {src:"images/arc-gis/page4.jpg", thumb:"images/arc-gis/thumb4.jpg", title:"Page four"},
+                        {src:"images/arc-gis/page5.jpg", thumb:"images/arc-gis/thumb5.jpg", title:"Page five"},
+                        {src:"images/arc-gis/page6.jpg", thumb:"images/arc-gis/thumb6.jpg", title:"Page six"},
+                        {src:"images/arc-gis/page7.jpg", thumb:"images/arc-gis/thumb7.jpg", title:"Page seven"},
+                        {src:"images/arc-gis/page8.jpg", thumb:"images/arc-gis/thumb8.jpg", title:"Last"}
+                    ],
+                    viewMode:"3d"
+                });
+            });
             window.addEventListener('DOMContentLoaded', (event) => {
           // Check if the current URL is the original one
           if (window.location.href === 'file:///D:/ESDI%20project/ESDI%20Doc/document-flipbook/index.html') {
