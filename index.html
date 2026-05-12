@@ -246,61 +246,64 @@
       <script src="js/jquery.js"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
       <script src="js/flipbook.min.js"></script>
+      <script src="js/flipbook-pdf-from-images.js"></script>
       <script type="text/javascript">
          $(document).ready(function () {
             $("#modal-1").on("shown.bs.modal", function () {
-                $("#theme-default-1").flipBook({
+                $("#theme-default-1").flipBook(FlipbookPdfFromImages.augmentOptions({
                     pages:[
                         {src:"images/fcsc/page1.jpg", thumb:"images/fcsc/thumb1.jpg", title:"Page One"},
                         {src:"images/fcsc/page2.jpg", thumb:"images/fcsc/thumb2.jpg", title:"Page two"},
                         {src:"images/fcsc/page3.jpg", thumb:"images/fcsc/thumb3.jpg", title:"Last"}
                     ],
                     viewMode:"3d"
-                });
+                }));
             });
             $("#modal-2").on("shown.bs.modal", function () {
-                $("#theme-default-2").flipBook({
+                $("#theme-default-2").flipBook(FlipbookPdfFromImages.augmentOptions({
                     pages:[
                         {src:"images/ims/page1.jpg", thumb:"images/ims/thumb1.jpg", title:"Page One"},
                         {src:"images/ims/page2.jpg", thumb:"images/ims/thumb2.jpg", title:"Page two"},
                         {src:"images/ims/page3.jpg", thumb:"images/ims/thumb3.jpg", title:"Last"}
                     ],
                     viewMode:"3d"
-                });
+                }));
             });
             $("#modal-3").on("shown.bs.modal", function () {
-                $("#theme-default-3").flipBook({
+                $("#theme-default-3").flipBook(FlipbookPdfFromImages.augmentOptions({
                     pages:[
                         {src:"images/parency/page1.jpg", thumb:"images/parency/thumb1.jpg", title:"Page One"},
                         {src:"images/parency/page2.jpg", thumb:"images/parency/thumb2.jpg", title:"Page two"},
                         {src:"images/parency/page3.jpg", thumb:"images/parency/thumb3.jpg", title:"Last"}
                     ],
                     viewMode:"3d"
-                });
+                }));
             });
             $("#modal-4").on("shown.bs.modal", function () {
-                $("#theme-default-4").flipBook({
+                $("#theme-default-4").flipBook(FlipbookPdfFromImages.augmentOptions({
                     pages:[
                         {src:"images/pin-point/page1.jpg", thumb:"images/pin-point/thumb1.jpg", title:"Page One"},
                         {src:"images/pin-point/page2.jpg", thumb:"images/pin-point/thumb2.jpg", title:"Page two"},
                         {src:"images/pin-point/page3.jpg", thumb:"images/pin-point/thumb3.jpg", title:"Last"}
                     ],
                     viewMode:"3d"
-                });
+                }));
             });
             $("#modal-5").on("shown.bs.modal", function () {
-                $("#theme-default-5").flipBook({
+                $("#theme-default-5").flipBook(FlipbookPdfFromImages.augmentOptions({
                     pages:[
                         {src:"images/quadrent/page1.jpg", thumb:"images/quadrent/thumb1.jpg", title:"Page One"},
                         {src:"images/quadrent/page2.jpg", thumb:"images/quadrent/thumb2.jpg", title:"Page two"},
                         {src:"images/quadrent/page3.jpg", thumb:"images/quadrent/thumb3.jpg", title:"Last"}
                     ],
                     viewMode:"3d"
-                });
+                }));
             });
             $("#modal-6").on("shown.bs.modal", function () {
-                $("#theme-default-6").flipBook({
+                $("#theme-default-6").flipBook(FlipbookPdfFromImages.augmentOptions({
                     pages:[
                         {src:"images/healthcare/page1.jpg", thumb:"images/healthcare/thumb1.jpg", title:"Page One"},
                         {src:"images/healthcare/page3.jpg", thumb:"images/healthcare/thumb3.jpg", title:"Page two"},
@@ -315,10 +318,10 @@
                         {src:"images/healthcare/page12.jpg", thumb:"images/healthcare/thumb12.jpg", title:"Last"}
                     ],
                     viewMode:"3d"
-                });
+                }));
             });
             $("#modal-7").on("shown.bs.modal", function () {
-                $("#theme-default-7").flipBook({
+                $("#theme-default-7").flipBook(FlipbookPdfFromImages.augmentOptions({
                     pages:[
                         {src:"images/stayq/page1.jpg", thumb:"images/stayq/thumb1.jpg", title:"Cover"},
                         {src:"images/stayq/page2.jpg", thumb:"images/stayq/thumb2.jpg", title:"Page two"},
@@ -328,10 +331,10 @@
                         {src:"images/stayq/page6.jpg", thumb:"images/stayq/thumb6.jpg", title:"Last"}
                     ],
                     viewMode:"3d"
-                });
+                }));
             });
             $("#modal-8").on("shown.bs.modal", function () {
-                $("#theme-default-8").flipBook({
+                $("#theme-default-8").flipBook(FlipbookPdfFromImages.augmentOptions({
                     pages:[
                         {src:"images/outsys/page1.jpg", thumb:"images/outsys/thumb1.jpg", title:"Cover"},
                         {src:"images/outsys/page2.jpg", thumb:"images/outsys/thumb2.jpg", title:"Page two"},
@@ -344,10 +347,10 @@
                         {src:"images/outsys/page9.jpg", thumb:"images/outsys/thumb9.jpg", title:"Last"}
                     ],
                     viewMode:"3d"
-                });
+                }));
             });
             $("#modal-9").on("shown.bs.modal", function () {
-                $("#theme-default-9").flipBook({
+                $("#theme-default-9").flipBook(FlipbookPdfFromImages.augmentOptions({
                     pages:[
                         {src:"images/bio-illustrator/page1.jpg", thumb:"images/bio-illustrator/thumb1.jpg", title:"Cover"},
                         {src:"images/bio-illustrator/page2.jpg", thumb:"images/bio-illustrator/thumb2.jpg", title:"Page two"},
@@ -357,10 +360,10 @@
                         {src:"images/bio-illustrator/page6.jpg", thumb:"images/bio-illustrator/thumb6.jpg", title:"Last"}
                     ],
                     viewMode:"3d"
-                });
+                }));
             });
             $("#modal-10").on("shown.bs.modal", function () {
-                $("#theme-default-10").flipBook({
+                $("#theme-default-10").flipBook(FlipbookPdfFromImages.augmentOptions({
                     pages:[
                         {src:"images/arc-gis/page1.jpg", thumb:"images/arc-gis/thumb1.jpg", title:"Cover"},
                         {src:"images/arc-gis/page2.jpg", thumb:"images/arc-gis/thumb2.jpg", title:"Page two"},
@@ -372,7 +375,7 @@
                         {src:"images/arc-gis/page8.jpg", thumb:"images/arc-gis/thumb8.jpg", title:"Last"}
                     ],
                     viewMode:"3d"
-                });
+                }));
             });
             window.addEventListener('DOMContentLoaded', (event) => {
           // Check if the current URL is the original one
