@@ -296,6 +296,50 @@
 
     patchToggleDownloadMenuForZip();
 
+    /**
+     * Stock flipbook calls window.open(btnDownloadPdf.url) when url is null/empty, which on
+     * production hosts can open a bad path (e.g. /null) and show the host's 404 page (e.g. Vercel).
+     * Patching the prototype once matches the ZIP submenu approach and avoids relying on
+     * per-instance onButtonClick overrides from onbookcreated only.
+     */
+    function patchMainOnButtonClickForClientDownloads() {
+        if (!protoOnButtonClick || protoOnButtonClick._flipbookClientDownloadPatched) {
+            return;
+        }
+        protoOnButtonClick._flipbookClientDownloadPatched = true;
+        window.FLIPBOOK.Main.prototype.onButtonClick = function (btn, evt) {
+            var dataName = $(btn).attr("data-name");
+            var opts = this.options;
+            var rawPdfUrl = opts.btnDownloadPdf && opts.btnDownloadPdf.url;
+            var pdfUrl =
+                rawPdfUrl === null || rawPdfUrl === undefined
+                    ? ""
+                    : String(rawPdfUrl).trim();
+            if (
+                dataName === "btnDownloadPdf" &&
+                !opts.pdfMode &&
+                (!pdfUrl || pdfUrl === "" || pdfUrl === "null")
+            ) {
+                var fname = (opts.btnDownloadPdf && opts.btnDownloadPdf.name) || "allPages.pdf";
+                downloadPdfFromPages(opts.pages || [], fname);
+                return;
+            }
+            if (
+                dataName === "btnDownloadPages" &&
+                !opts.downloadMenu &&
+                usesPlaceholderZipUrl(opts)
+            ) {
+                var zipName =
+                    (opts.btnDownloadPages && opts.btnDownloadPages.name) || "allPages.zip";
+                downloadZipFromPages(opts.pages || [], zipName);
+                return;
+            }
+            return protoOnButtonClick.call(this, btn, evt);
+        };
+    }
+
+    patchMainOnButtonClickForClientDownloads();
+
     function augmentOptions(options) {
         if (!protoOnButtonClick) {
             return options;
@@ -304,38 +348,14 @@
         if (usesPlaceholderZipUrl({ btnDownloadPages: options.btnDownloadPages })) {
             options.btnDownloadPages.url = "";
         }
-        var previousOnBookCreated = options.onbookcreated;
-        options.onbookcreated = function () {
-            if (typeof previousOnBookCreated === "function") {
-                previousOnBookCreated.call(this);
-            }
-            var fb = this;
-            fb.onButtonClick = function (btn, evt) {
-                var dataName = $(btn).attr("data-name");
-                var pdfUrl = fb.options.btnDownloadPdf && fb.options.btnDownloadPdf.url;
-                if (
-                    dataName === "btnDownloadPdf" &&
-                    !fb.options.pdfMode &&
-                    (!pdfUrl || pdfUrl === "")
-                ) {
-                    var fname = (fb.options.btnDownloadPdf && fb.options.btnDownloadPdf.name) || "allPages.pdf";
-                    downloadPdfFromPages(fb.options.pages || [], fname);
-                    return;
-                }
-                if (
-                    dataName === "btnDownloadPages" &&
-                    !fb.options.downloadMenu &&
-                    usesPlaceholderZipUrl(fb.options)
-                ) {
-                    var zipName =
-                        (fb.options.btnDownloadPages && fb.options.btnDownloadPages.name) ||
-                        "allPages.zip";
-                    downloadZipFromPages(fb.options.pages || [], zipName);
-                    return;
-                }
-                return protoOnButtonClick.call(fb, btn, evt);
-            };
-        };
+        options.btnDownloadPdf = $.extend({}, options.btnDownloadPdf);
+        var hasServerPdf = !!(
+            options.pdfMode ||
+            (options.pdfUrl && String(options.pdfUrl).trim() !== "")
+        );
+        if (!hasServerPdf) {
+            options.btnDownloadPdf.url = "";
+        }
         return options;
     }
 
